@@ -30,17 +30,36 @@ jobs:
       - name: Generate Jacoco report
         run: ./gradlew jacocoTestReport
 
-      - name: List jacoco reports
-        run: find . -name "jacocoTestReport.xml" -print || true
+      # after running ./gradlew jacocoTestReport
+      - name: Find jacoco reports
+        id: find-reports
+        run: |
+          # find files and join with commas
+          REPORTS=$(find $PWD -type f -name "jacocoTestReport.xml" | paste -sd ',' -)
+          echo "reports=${REPORTS}" >> $GITHUB_OUTPUT
+
+      - name: Fail if no reports found
+        if: ${{ steps.find-reports.outputs.reports == '' }}
+        run: |
+          echo "No jacocoTestReport.xml found — check your build/jacoco task and paths"
+          exit 1
 
       - name: Check coverage and publish
         id: jacoco
-        uses: madrapps/jacoco-report@v1.2
+        uses: madrapps/jacoco-report@v1.7.2
         with:
-          paths: ./${{ github.event.pull_request.title }}/app/build/reports/jacoco/test/jacocoTestReport.xml
+          paths: ${{ steps.find-reports.outputs.reports }}
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 80
           min-coverage-changed-files: 80
+            - name: Check coverage and publish
+              id: jacoco
+              uses: madrapps/jacoco-report@v1.2
+              with:
+                paths: ./${{ github.event.pull_request.title }}/app/build/reports/jacoco/test/jacocoTestReport.xml
+                token: ${{ secrets.GITHUB_TOKEN }}
+                min-coverage-overall: 80
+                min-coverage-changed-files: 80
 
       - name: Generate javadoc
         run: ./gradlew javadoc
