@@ -43,7 +43,7 @@ public class Sort {
     /**
      * main method
      *
-     * @param arr - array to sort.
+     * @param items - array to sort.
      */
     public static void sort(int[] items) {
         if (items == null) {
