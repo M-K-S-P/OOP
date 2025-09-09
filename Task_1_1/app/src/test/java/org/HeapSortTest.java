@@ -16,7 +16,7 @@ class HeapSortTest {
     }
 
     @Test
-    void test_even_length() {
+    void testEvenLength() {
         int[] array = new int[]{3, 1, 5, 4, 2};
         Sort.sort(array);
 
@@ -24,7 +24,7 @@ class HeapSortTest {
     }
 
     @Test
-    void test_odd_length() {
+    void testOddLength() {
         int[] array = new int[]{3, 1, 5, 4};
         Sort.sort(array);
 
@@ -32,7 +32,7 @@ class HeapSortTest {
     }
 
     @Test
-    void test_single_elem() {
+    void testSingleElem() {
         int[] array = new int[]{3};
         Sort.sort(array);
 
@@ -40,13 +40,13 @@ class HeapSortTest {
     }
 
     @Test
-    void test_empty_arr() {
+    void testEmptyArr() {
         int[] array = new int[]{};
         Sort.sort(array);
     }
 
     @Test
-    void test_nullptr() {
+    void testNullptr() {
         Sort.sort(null);
     }
 }

@@ -7,30 +7,17 @@ import java.util.Arrays;
  */
 public class Sort {
 
-    /*
-     * Publicly unavailable variables made only for the code to have something different from others.
-     *
-     */ 
-    static int[] arr;
-    static int len;
-
     private static int leftChildIndex(int i) {
         return (i + 1) * 2 - 1;
     }
 
-    /**
-     * comms 3 
-     */
-    private static void swap(int i, int j) {
+    private static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
     }
 
-    /**
-     * comms 2
-    */
-    private static void siftDown(int i, int end) {
+    private static void siftDown(int[] arr, int i, int end) {
         while (leftChildIndex(i) < end) {
             int child = leftChildIndex(i);
             if (child + 1 < end && arr[child] < arr[child + 1]) {
@@ -49,14 +36,14 @@ public class Sort {
     /** comms
      *
      */
-    private static void heapify() {
-        for (int i = len - 1; i >= 0; --i) {
-            siftDown(i, len - i);
+    private static void heapify(int[] arr) {
+        for (int i = arr.length - 1; i >= 0; --i) {
+            siftDown(arr, i, arr.length - i);
         }
     }
 
     /**
-     * main method.
+     * 
      *
      * @param items - array to sort.
      */
@@ -64,12 +51,10 @@ public class Sort {
         if (items == null) {
             return;
         }
-        arr = items;
-        len = arr.length;
         heapify();
-        for (int i = len - 1; i > 0; --i) {
-            swap(0, i);
-            siftDown(0, i);
+        for (int i = items.length - 1; i > 0; --i) {
+            swap(items, 0, i);
+            siftDown(items, 0, i);
         }
     }
 
