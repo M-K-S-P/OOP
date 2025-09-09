@@ -1,4 +1,5 @@
 package org;
+
 import java.util.Arrays;
 
 /**
@@ -42,7 +43,7 @@ public class Sort {
     }
 
     /**
-     * main method
+     * main method.
      *
      * @param items - array to sort.
      */
@@ -60,8 +61,9 @@ public class Sort {
     }
 
     /**
-     * example usage
-     * @param args - cmd arguments, none handled
+     * example usage.
+     *
+     * @param args - cmd arguments, none handled.
      */
     public static void main(String[] args) {
         int[] array = new int[] {3, 1, 5, 4, 2};
