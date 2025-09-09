@@ -18,6 +18,9 @@ public class Sort {
         return (i + 1) * 2 - 1;
     }
 
+    /**
+     * comms 3 
+     */
     private static void swap(int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
