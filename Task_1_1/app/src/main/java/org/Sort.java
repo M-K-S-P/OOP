@@ -57,6 +57,11 @@ public class Sort {
             siftDown(0, i);
         }
     }
+
+    /**
+     * example usage
+     * @param args - cmd arguments, none handled
+     */
     public static void main(String[] args) {
         int[] array = new int[] {3, 1, 5, 4, 2};
         Sort.sort(array);
