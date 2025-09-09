@@ -30,6 +30,9 @@ jobs:
       - name: Generate Jacoco report
         run: ./gradlew jacocoTestReport
 
+      - name: List jacoco reports
+        run: find . -name "jacocoTestReport.xml" -print || true
+
       - name: Check coverage and publish
         id: jacoco
         uses: madrapps/jacoco-report@v1.2
