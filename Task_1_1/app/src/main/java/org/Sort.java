@@ -51,7 +51,7 @@ public class Sort {
         if (items == null) {
             return;
         }
-        heapify();
+        heapify(items);
         for (int i = items.length - 1; i > 0; --i) {
             swap(items, 0, i);
             siftDown(items, 0, i);
