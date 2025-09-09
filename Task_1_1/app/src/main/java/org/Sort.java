@@ -33,9 +33,6 @@ public class Sort {
         }
     }
 
-    /** comms
-     *
-     */
     private static void heapify(int[] arr) {
         for (int i = arr.length - 1; i >= 0; --i) {
             siftDown(arr, i, arr.length - i);
@@ -43,7 +40,7 @@ public class Sort {
     }
 
     /**
-     * 
+     * The only callable method that sorts an array of integers passed as an argument.
      *
      * @param items - array to sort.
      */
