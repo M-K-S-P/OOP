@@ -25,7 +25,7 @@ public class Sort {
             }
 
             if (arr[i] < arr[child]) {
-                swap(i, child);
+                swap(arr, i, child);
                 i = child;
             } else {
                 break;
