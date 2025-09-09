@@ -7,6 +7,10 @@ import java.util.Arrays;
  */
 public class Sort {
 
+    /*
+     * Publicly unavailable variables made only for the code to have something different from others.
+     *
+     */ 
     static int[] arr;
     static int len;
 
@@ -20,6 +24,9 @@ public class Sort {
         arr[j] = tmp;
     }
 
+    /**
+     * comms 2
+    */
     private static void siftDown(int i, int end) {
         while (leftChildIndex(i) < end) {
             int child = leftChildIndex(i);
@@ -36,6 +43,9 @@ public class Sort {
         }
     }
 
+    /** comms
+     *
+     */
     private static void heapify() {
         for (int i = len - 1; i >= 0; --i) {
             siftDown(i, len - i);
