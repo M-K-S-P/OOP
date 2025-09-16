@@ -3,7 +3,8 @@ package org;
 /**
  * Class describing a pair structure.
  */
-public final class Pair<A,B> {
+public final class Pair<A, B> {
+
     private final A first;
     private final B second;
 
@@ -18,12 +19,16 @@ public final class Pair<A,B> {
     /**
      * get first element.
      */
-    public A getFirst() { return first; }
+    public A getFirst() {
+        return first;
+    }
 
 
     /**
      * get second element.
      */
-    public B getSecond() { return second; }
+    public B getSecond() {
+        return second;
+    }
 }
 

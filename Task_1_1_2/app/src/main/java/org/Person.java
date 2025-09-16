@@ -7,33 +7,35 @@ import java.util.ArrayList;
  * class describing the player and the dealer.
  *
  */
-public class Person{
+public class Person {
+
     private List<Card> cards = new ArrayList<>();
     private int sum = 0;
 
     /**
-     *method used to add cards to a Person's hand.
+     * method used to add cards to a Person's hand.
      */
-    public void addCard(Pair<Integer, Integer> vals){
+    public void addCard(Pair<Integer, Integer> vals) {
         Card addition = new Card();
         addition.setCard(vals.getFirst(), vals.getSecond());
         sum += addition.getValue();
         cards.add(addition);
     }
 
-    private Card getCard(int ind){
+    private Card getCard(int ind) {
         return cards.get(ind);
     }
 
     /**
      * method used to get hand in readable string representation.
      */
-    public String getCards(){
+    public String getCards() {
         String out = "";
-        for (int i = 0; i < cards.size(); i++){
+        for (int i = 0; i < cards.size(); i++) {
             out += getCard(i).getCard();
-            if (i != cards.size() - 1)
+            if (i != cards.size() - 1) {
                 out += " ";
+            }
         }
         return out;
     }
@@ -41,7 +43,7 @@ public class Person{
     /**
      * method used to get Person's sum of cards
      */
-    public int getSum(){
+    public int getSum() {
         return sum;
     }
 }
