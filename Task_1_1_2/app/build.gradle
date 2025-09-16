@@ -33,6 +33,11 @@ java {
     }
 }
 
+jacoco {
+
+    reportsDirectory = layout.buildDirectory.dir('./build/reports/jacoco/test/jacocoTestReport.xml')
+}
+
 application {
     // Define the main class for the application.
     mainClass = 'org.Game'
