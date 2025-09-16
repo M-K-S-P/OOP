@@ -14,6 +14,9 @@ public class Card {
 
     /**
      * method necessary to create Card obj.
+     *
+     * @param setName - card name.
+     * @param setSuit - card suit.
      */
     public void setCard(int setName, int setSuit) {
         name = setName;
