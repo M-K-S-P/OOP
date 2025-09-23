@@ -12,6 +12,7 @@ public class Game {
 
     private static int roundCounter = 0;
     private static Deck newDeck = new Deck();
+
     private static void generateSequence() {
         newDeck.generateDeck();
     }
@@ -19,7 +20,7 @@ public class Game {
     private static void round(Scanner sc) {
         System.out.println("round " + roundCounter);
         roundCounter += 1;
-int cardCounter = 5;
+        int cardCounter = 5;
         generateSequence();
         Person user = new Person();
         Person dealer = new Person();

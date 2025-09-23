@@ -30,8 +30,9 @@ public class Person {
     public String getHand(int amount) {
         int count = cards.size();
         String out = "";
-        if (amount != 0)
+        if (amount != 0) {
             count = amount;
+        }
         for (int i = 0; i < count; i++) {
             out += getCard(i).getCard();
             if (i != count - 1) {

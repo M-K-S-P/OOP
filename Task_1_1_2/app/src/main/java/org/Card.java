@@ -5,13 +5,21 @@ package org;
  */
 public class Card {
 
-    enum names {Ace(1), King(10), Queen(10), Jack(10), Ten(10), Nine(9), Eight(8), Seven(7), Six(6), Five(5), Four(4), Three(3), Two(2);
+    enum names {
+        Ace(1), King(10), Queen(10), Jack(10), Ten(10), Nine(9), Eight(8), Seven(7), Six(6), Five(
+            5), Four(4), Three(3), Two(2);
         public final int val;
-        private names(int val){
+
+        private names(int val) {
             this.val = val;
         }
-    };
-    enum suits {Diamonds, Hearts, Clubs, Spades};
+    }
+
+    ;
+
+    enum suits {Diamonds, Hearts, Clubs, Spades}
+
+    ;
     private int name;
     private int suit;
 
