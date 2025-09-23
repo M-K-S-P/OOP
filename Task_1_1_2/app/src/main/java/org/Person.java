@@ -15,11 +15,9 @@ public class Person {
     /**
      * method used to add cards to a Person's hand.
      */
-    public void addCard(Pair<Integer, Integer> vals) {
-        Card addition = new Card();
-        addition.setCard(vals.getFirst(), vals.getSecond());
-        sum += addition.getValue();
-        cards.add(addition);
+    public void addCard(Card newCard) {
+        sum += newCard.getValue();
+        cards.add(newCard);
     }
 
     private Card getCard(int ind) {
@@ -29,11 +27,14 @@ public class Person {
     /**
      * method used to get hand in readable string representation.
      */
-    public String getCards() {
+    public String getHand(int amount) {
+        int count = cards.size();
         String out = "";
-        for (int i = 0; i < cards.size(); i++) {
+        if (amount != 0)
+            count = amount;
+        for (int i = 0; i < count; i++) {
             out += getCard(i).getCard();
-            if (i != cards.size() - 1) {
+            if (i != count - 1) {
                 out += " ";
             }
         }

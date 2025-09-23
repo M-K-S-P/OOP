@@ -10,45 +10,33 @@ import java.util.Scanner;
  */
 public class Game {
 
-    private static List<Pair<Integer, Integer>> sequence;
-    private static int roundCounter = 1;
-
+    private static int roundCounter = 0;
+    private static Deck newDeck = new Deck();
     private static void generateSequence() {
-        sequence = new ArrayList<>();
-        for (int i = 0; i < 13; i++) {
-            for (int j = 0; j < 4; j++) {
-                sequence.add(new Pair<>(i, j));
-            }
-        }
-        Collections.shuffle(sequence);
-    }
-
-    private static Pair<Integer, Integer> fetchCard(int ind) {
-        return sequence.get(ind);
+        newDeck.generateDeck();
     }
 
     private static void round(Scanner sc) {
         System.out.println("round " + roundCounter);
         roundCounter += 1;
-        int cardCounter = 5;
+int cardCounter = 5;
         generateSequence();
         Person user = new Person();
         Person dealer = new Person();
-        user.addCard(fetchCard(0));
-        user.addCard(fetchCard(1));
-        System.out.println("Your cards: " + user.getCards());
+        user.addCard(newDeck.fetchCard(0));
+        user.addCard(newDeck.fetchCard(1));
+        System.out.println("Your cards: " + user.getHand(0));
         System.out.println("Your sum: " + user.getSum());
-        dealer.addCard(fetchCard(2));
-        dealer.addCard(fetchCard(3));
-        System.out.println("Dealer's cards: " + dealer.getCards());
-        System.out.println("Dealer's sum: " + dealer.getSum());
+        dealer.addCard(newDeck.fetchCard(2));
+        dealer.addCard(newDeck.fetchCard(3));
+        System.out.println("Dealer's first card: " + dealer.getHand(1));
         int step = 1;
         while (step != 0) {
             System.out.println("1 for open next card, 0 for fold:");
             step = sc.nextInt();
             if (step == 1) {
-                user.addCard(fetchCard(cardCounter));
-                System.out.println("Your cards: " + user.getCards());
+                user.addCard(newDeck.fetchCard(cardCounter));
+                System.out.println("Your cards: " + user.getHand(0));
                 System.out.println("Your sum: " + user.getSum());
                 if (user.getSum() > 21) {
                     System.out.println("You lost");
@@ -56,19 +44,19 @@ public class Game {
                 }
                 cardCounter += 1;
             }
-            dealer.addCard(fetchCard(4));
-            System.out.println("Dealer's cards: " + dealer.getCards());
-            System.out.println("Dealer's sum: " + dealer.getSum());
-            if (dealer.getSum() > 21) {
-                System.out.println("You won");
-                return;
-            } else if (dealer.getSum() > user.getSum()) {
-                System.out.println("You lost");
-            } else if (dealer.getSum() < user.getSum()) {
-                System.out.println("You won");
-            } else {
-                System.out.println("Tie");
-            }
+        }
+        dealer.addCard(newDeck.fetchCard(4));
+        System.out.println("Dealer's cards: " + dealer.getHand(0));
+        System.out.println("Dealer's sum: " + dealer.getSum());
+        if (dealer.getSum() > 21) {
+            System.out.println("You won");
+            return;
+        } else if (dealer.getSum() > user.getSum()) {
+            System.out.println("You lost");
+        } else if (dealer.getSum() < user.getSum()) {
+            System.out.println("You won");
+        } else {
+            System.out.println("Tie");
         }
     }
 

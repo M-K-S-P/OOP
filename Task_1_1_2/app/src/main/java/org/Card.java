@@ -5,10 +5,13 @@ package org;
  */
 public class Card {
 
-    private static final String[] names = {"Ace", "King", "Queen", "Jack", "10", "9", "8", "7", "6",
-        "5", "4", "3", "2"};
-    private static final String[] suits = {" of diamonds", " of hearts", " of clubs", " of spades"};
-    private static final int[] values = {1, 10, 10, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2};
+    enum names {Ace(1), King(10), Queen(10), Jack(10), Ten(10), Nine(9), Eight(8), Seven(7), Six(6), Five(5), Four(4), Three(3), Two(2);
+        public final int val;
+        private names(int val){
+            this.val = val;
+        }
+    };
+    enum suits {Diamonds, Hearts, Clubs, Spades};
     private int name;
     private int suit;
 
@@ -27,13 +30,13 @@ public class Card {
      * method used to get string representation of the Card object.
      */
     public String getCard() {
-        return names[name] + suits[suit];
+        return names.values()[name].toString() + " of " + suits.values()[suit].toString();
     }
 
     /**
      * method used to get int value of the Card object.
      */
     public int getValue() {
-        return values[name];
+        return names.values()[name].val;
     }
 }
