@@ -5,19 +5,19 @@ package org;
  */
 public class Card {
 
-    enum names {
+    private enum Names {
         Ace(1), King(10), Queen(10), Jack(10), Ten(10), Nine(9), Eight(8), Seven(7), Six(6), Five(
             5), Four(4), Three(3), Two(2);
         public final int val;
 
-        private names(int val) {
+        private Names(int val) {
             this.val = val;
         }
     }
 
     ;
 
-    enum suits {Diamonds, Hearts, Clubs, Spades}
+    private enum Suits {Diamonds, Hearts, Clubs, Spades}
 
     ;
     private int name;
@@ -38,13 +38,13 @@ public class Card {
      * method used to get string representation of the Card object.
      */
     public String getCard() {
-        return names.values()[name].toString() + " of " + suits.values()[suit].toString();
+        return Names.values()[name].toString() + " of " + Suits.values()[suit].toString();
     }
 
     /**
      * method used to get int value of the Card object.
      */
     public int getValue() {
-        return names.values()[name].val;
+        return Names.values()[name].val;
     }
 }
