@@ -1,7 +1,7 @@
 package org;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * class describing the player and the dealer.
@@ -43,7 +43,7 @@ public class Person {
     }
 
     /**
-     * method used to get Person's sum of cards
+     * method used to get Person's sum of cards.
      */
     public int getSum() {
         return sum;

@@ -1,8 +1,8 @@
 package org;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -23,11 +23,11 @@ public class Game {
         int cardCounter = 5;
         generateSequence();
         Person user = new Person();
-        Person dealer = new Person();
         user.addCard(newDeck.fetchCard(0));
         user.addCard(newDeck.fetchCard(1));
         System.out.println("Your cards: " + user.getHand(0));
         System.out.println("Your sum: " + user.getSum());
+        Person dealer = new Person();
         dealer.addCard(newDeck.fetchCard(2));
         dealer.addCard(newDeck.fetchCard(3));
         System.out.println("Dealer's first card: " + dealer.getHand(1));

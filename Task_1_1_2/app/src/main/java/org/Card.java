@@ -17,7 +17,7 @@ public class Card {
 
     ;
 
-    private enum Suits {Diamonds, Hearts, Clubs, Spades}
+    private enum Suits { Diamonds, Hearts, Clubs, Spades }
 
     ;
     private int name;

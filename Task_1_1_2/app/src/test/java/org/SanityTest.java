@@ -1,8 +1,11 @@
 package org;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
+/*
+ * Sanity check.
+ */
 public class SanityTest {
     @Test
     void sanity() {
