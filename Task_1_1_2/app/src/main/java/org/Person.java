@@ -20,8 +20,8 @@ public class Person {
         cards.add(newCard);
     }
 
-    private Card getCard(int ind) {
-        return cards.get(ind);
+    public String getCard(int ind) {
+        return cards.get(ind).getCard();
     }
 
     /**
@@ -34,7 +34,7 @@ public class Person {
             count = amount;
         }
         for (int i = 0; i < count; i++) {
-            out += getCard(i).getCard();
+            out += getCard(i);
             if (i != count - 1) {
                 out += " ";
             }

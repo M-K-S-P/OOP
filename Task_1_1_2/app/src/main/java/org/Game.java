@@ -37,7 +37,7 @@ public class Game {
             step = sc.nextInt();
             if (step == 1) {
                 user.addCard(newDeck.fetchCard(cardCounter));
-                System.out.println("Your cards: " + user.getHand(0));
+                System.out.println("New card: " + user.getCard(cardCounter - 3));
                 System.out.println("Your sum: " + user.getSum());
                 if (user.getSum() > 21) {
                     System.out.println("You lost");
