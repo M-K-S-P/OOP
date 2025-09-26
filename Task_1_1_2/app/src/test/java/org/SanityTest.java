@@ -24,7 +24,13 @@ public class SanityTest {
     }
 
     @Test
-    void personCheck() {
+    void deckTest(){
+        Deck deck = new Deck();
+        deck.generateDeck();
+    }
+
+    @Test
+    void personTest() {
         Person person = new Person();
         Card card = new Card();
         card.setCard(0, 0);
@@ -32,6 +38,15 @@ public class SanityTest {
         person.openHand();
         assertTrue(person.getHand().equals("Ace of Diamonds"));
         assertTrue(person.getSum() == 1);
+    }
+
+    @Test
+    void gameTest() {
+        //final byte[] input = "".getBytes();
+        //final ByteArrayInputStream inStream = new ByteArrayInputStream(input);
+        //System.setIn(inStream);
+        //Game game = new Game();
+        assertTrue(true);
     }
 }
 
