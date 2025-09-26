@@ -19,8 +19,8 @@ public class SanityTest {
         Card card = new Card();
         card.setCard(0, 0);
         card.openCard();
-        assertTrue(card.toString() == "Ace of Diamonds");
-        assertTrue(card.getValue() == 1);
+        assertTrue(card.toString().equals("Ace of Diamonds"));
+         assertTrue(card.getValue() == 1);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class SanityTest {
         card.setCard(0, 0);
         person.addCard(card);
         person.openHand();
-        assertTrue(person.getHand() == "Ace of Diamonds");
+        assertTrue(person.getHand().equals("Ace of Diamonds"));
         assertTrue(person.getSum() == 1);
     }
 }
