@@ -37,7 +37,7 @@ public class Person {
         }
     }
 
-    public String getCard(int ind) {
+    private String getCard(int ind) {
         return cards.get(ind).toString();
     }
 
