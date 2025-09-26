@@ -25,19 +25,25 @@ public class Game {
         Person user = new Person();
         user.addCard(newDeck.fetchCard(0));
         user.addCard(newDeck.fetchCard(1));
-        System.out.println("Your cards: " + user.getHand(0));
+        user.openHand();
+        System.out.println("Your cards: " + user.getHand());
         System.out.println("Your sum: " + user.getSum());
         Person dealer = new Person();
         dealer.addCard(newDeck.fetchCard(2));
         dealer.addCard(newDeck.fetchCard(3));
-        System.out.println("Dealer's first card: " + dealer.getHand(1));
+        dealer.addCard(newDeck.fetchCard(4));
+        dealer.openCard(0);
+        dealer.openCard(1);
+        System.out.println("Dealer's first card: " + dealer.getHand());
         int step = 1;
         while (step != 0) {
             System.out.println("1 for open next card, 0 for fold:");
             step = sc.nextInt();
             if (step == 1) {
-                user.addCard(newDeck.fetchCard(cardCounter));
-                System.out.println("New card: " + user.getCard(cardCounter - 3));
+                Card addition = newDeck.fetchCard(cardCounter);
+                addition.openCard();
+                user.addCard(addition);
+                System.out.println("New card: " + addition.toString());
                 System.out.println("Your sum: " + user.getSum());
                 if (user.getSum() > 21) {
                     System.out.println("You lost");
@@ -46,8 +52,8 @@ public class Game {
                 cardCounter += 1;
             }
         }
-        dealer.addCard(newDeck.fetchCard(4));
-        System.out.println("Dealer's cards: " + dealer.getHand(0));
+        dealer.openHand();
+        System.out.println("Dealer's cards: " + dealer.getHand());
         System.out.println("Dealer's sum: " + dealer.getSum());
         if (dealer.getSum() > 21) {
             System.out.println("You won");

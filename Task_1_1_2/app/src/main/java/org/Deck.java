@@ -12,9 +12,16 @@ public class Deck {
     private static List<Card> newDeck;
 
     /*
+     * Card fetcher.
+     */
+    public static Card fetchCard(int ind) {
+        return newDeck.get(ind);
+    }
+
+    /*
      * Deck generator itself.
      */
-    public static void generateDeck() {
+    public void generateDeck() {
         newDeck = new ArrayList<>();
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++) {
@@ -24,13 +31,6 @@ public class Deck {
             }
         }
         Collections.shuffle(newDeck);
-    }
-
-    /*
-     * Card fetcher.
-     */
-    public static Card fetchCard(int ind) {
-        return newDeck.get(ind);
     }
 
 }

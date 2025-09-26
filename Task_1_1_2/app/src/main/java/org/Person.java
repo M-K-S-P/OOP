@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * class describing the player and the dealer.
- *
  */
 public class Person {
 
@@ -20,23 +19,38 @@ public class Person {
         cards.add(newCard);
     }
 
+    /**
+     * opens card by index.
+     *
+     * @param ind - index in question.
+     */
+    public void openCard(int ind) {
+        cards.get(ind).openCard();
+    }
+
+    /**
+     * opening cards made easy.
+     */
+    public void openHand() {
+        for (int i = 0; i < cards.size(); i++) {
+            openCard(i);
+        }
+    }
+
     public String getCard(int ind) {
-        return cards.get(ind).getCard();
+        return cards.get(ind).toString();
     }
 
     /**
      * method used to get hand in readable string representation.
      */
-    public String getHand(int amount) {
+    public String getHand() {
         int count = cards.size();
         String out = "";
-        if (amount != 0) {
-            count = amount;
-        }
         for (int i = 0; i < count; i++) {
             out += getCard(i);
             if (i != count - 1) {
-                out += " ";
+                out += ", ";
             }
         }
         return out;
