@@ -11,18 +11,13 @@ import java.util.Scanner;
 public class Game {
 
     private static int roundCounter = 0;
-    private static Deck newDeck = new Deck();
 
-    private static void generateSequence() {
+    protected static Status round(Scanner sc, Deck newDeck) {
         newDeck.generateDeck();
-    }
-
-    protected static Status round(Scanner sc) {
         Status stat = Status.Lost;
         System.out.println("round " + roundCounter);
         roundCounter += 1;
         int cardCounter = 5;
-        generateSequence();
         Person user = new Person();
         user.addCard(newDeck.fetchCard(0));
         user.addCard(newDeck.fetchCard(1));
@@ -57,14 +52,10 @@ public class Game {
         System.out.println("Dealer's cards: " + dealer.getHand());
         System.out.println("Dealer's sum: " + dealer.getSum());
         if (dealer.getSum() > 21) {
-            System.out.println("You won");
             stat = Status.Won;
-        } else if (dealer.getSum() > user.getSum()) {
-            System.out.println("You lost");
         } else if (dealer.getSum() < user.getSum()) {
-            System.out.println("You won");
+            stat = Status.Won;
         } else {
-            System.out.println("Tie");
             stat = Status.Tie;
         }
         return stat;
@@ -77,9 +68,11 @@ public class Game {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Deck newDeck = new Deck();
         int flag = 1;
         while (flag == 1) {
-            round(sc);
+            Status stat = round(sc, newDeck);
+            System.out.println(stat.toString());
             System.out.println("want to play again? Press 1");
             flag = sc.nextInt();
         }

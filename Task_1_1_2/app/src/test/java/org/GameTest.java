@@ -12,10 +12,10 @@ public class GameTest {
     @Test
     void gameTest() {
         String simulated = "1\n1\n1\n0\n0\n";
+        Deck newDeck = new Deck();
         Scanner scanner = new Scanner(
             new ByteArrayInputStream(simulated.getBytes(StandardCharsets.UTF_8)));
-        Game game = new Game();
-        Game.Status stat = game.round(scanner);
-        assertTrue(true); //round ended successfully
+        Game.Status stat = Game.round(scanner, newDeck);
+        assert (stat == Game.Status.Lost | stat == Game.Status.Won | stat == Game.Status.Tie);
     }
 }
