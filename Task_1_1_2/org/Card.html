@@ -36,7 +36,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Summary:</p>
 <ul>
-<li>Nested</li>
+<li><a href="#nested-class-summary">Nested</a></li>
 <li>Field</li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <div id="navbar-sub-list">
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -94,6 +94,24 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="Card.Rank.html" class="type-name-link" title="enum class in org">Card.Rank</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="Card.Suit.html" class="type-name-link" title="enum class in org">Card.Suit</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -102,8 +120,11 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Card</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.Card.Rank,org.Card.Suit)" class="member-name-link">Card</a><wbr>(<a href="Card.Rank.html" title="enum class in org">Card.Rank</a>&nbsp;setRank,
+ <a href="Card.Suit.html" title="enum class in org">Card.Suit</a>&nbsp;setSuit)</code></div>
+<div class="col-last even-row-color">
+<div class="block">method necessary to create Card obj.</div>
+</div>
 </div>
 </section>
 </li>
@@ -128,15 +149,9 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">open card.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCard(int,int)" class="member-name-link">setCard</a><wbr>(int&nbsp;setRank,
- int&nbsp;setSuit)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">method necessary to create Card obj.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">method used to get string representation of the Card object.</div>
 </div>
 </div>
@@ -157,9 +172,16 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;()">
+<section class="detail" id="&lt;init&gt;(org.Card.Rank,org.Card.Suit)">
 <h3>Card</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Card</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Card</span><wbr><span class="parameters">(<a href="Card.Rank.html" title="enum class in org">Card.Rank</a>&nbsp;setRank,
+ <a href="Card.Suit.html" title="enum class in org">Card.Suit</a>&nbsp;setSuit)</span></div>
+<div class="block">method necessary to create Card obj.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>setRank</code> - - card name.</dd>
+<dd><code>setSuit</code> - - card suit.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -170,19 +192,6 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="setCard(int,int)">
-<h3>setCard</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCard</span><wbr><span class="parameters">(int&nbsp;setRank,
- int&nbsp;setSuit)</span></div>
-<div class="block">method necessary to create Card obj.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>setRank</code> - - card name.</dd>
-<dd><code>setSuit</code> - - card suit.</dd>
-</dl>
-</section>
-</li>
 <li>
 <section class="detail" id="toString()">
 <h3>toString</h3>
