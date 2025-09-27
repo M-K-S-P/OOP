@@ -2,12 +2,12 @@ package org;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Scanner;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 
-public class gameTest {
+public class GameTest {
 
     @Test
     void gameTest() {
@@ -15,7 +15,7 @@ public class gameTest {
         Scanner scanner = new Scanner(
             new ByteArrayInputStream(simulated.getBytes(StandardCharsets.UTF_8)));
         Game game = new Game();
-        Game.status stat = game.round(scanner);
+        Game.Status stat = game.round(scanner);
         assertTrue(true); //round ended successfully
     }
 }

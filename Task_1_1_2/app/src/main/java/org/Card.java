@@ -55,5 +55,5 @@ public class Card {
         }
     }
 
-    public static enum Suit {Diamonds, Hearts, Clubs, Spades}
+    public static enum Suit { Diamonds, Hearts, Clubs, Spades }
 }

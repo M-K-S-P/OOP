@@ -17,8 +17,8 @@ public class Game {
         newDeck.generateDeck();
     }
 
-    protected static status round(Scanner sc) {
-        status stat = status.Lost;
+    protected static Status round(Scanner sc) {
+        Status stat = Status.Lost;
         System.out.println("round " + roundCounter);
         roundCounter += 1;
         int cardCounter = 5;
@@ -58,14 +58,14 @@ public class Game {
         System.out.println("Dealer's sum: " + dealer.getSum());
         if (dealer.getSum() > 21) {
             System.out.println("You won");
-            stat = status.Won;
+            stat = Status.Won;
         } else if (dealer.getSum() > user.getSum()) {
             System.out.println("You lost");
         } else if (dealer.getSum() < user.getSum()) {
             System.out.println("You won");
         } else {
             System.out.println("Tie");
-            stat = status.Tie;
+            stat = Status.Tie;
         }
         return stat;
     }
@@ -86,7 +86,7 @@ public class Game {
         sc.close();
     }
 
-    public static enum status {
+    public static enum Status {
         Won, Lost, Tie;
     }
 
