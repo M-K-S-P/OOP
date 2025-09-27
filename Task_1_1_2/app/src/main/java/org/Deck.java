@@ -23,8 +23,8 @@ public class Deck {
      */
     public void generateDeck() {
         newDeck = new ArrayList<>();
-        for (Card.Rank rank: Card.Rank.values()) {
-            for (Card.Suit suit: Card.Suit.values()) {
+        for (Card.Rank rank : Card.Rank.values()) {
+            for (Card.Suit suit : Card.Suit.values()) {
                 Card newCard = new Card(rank, suit);
                 newDeck.add(newCard);
             }

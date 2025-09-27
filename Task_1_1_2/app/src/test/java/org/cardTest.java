@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Test;
 public class cardTest {
 
     @Test
-    void cardTest(){
+    void cardTest() {
         Card card = new Card(Card.Rank.Ace, Card.Suit.Diamonds);
         card.openCard();
         assertTrue(card.toString().equals("Ace of Diamonds"));
-         assertTrue(card.getValue() == 1);
+        assertTrue(card.getValue() == 1);
     }
 
     @Test
