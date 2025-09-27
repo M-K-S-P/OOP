@@ -15,9 +15,9 @@ public class Card {
      * @param setRank - card name.
      * @param setSuit - card suit.
      */
-    public void setCard(int setRank, int setSuit) {
-        rank = Rank.values()[setRank];
-        suit = Suit.values()[setSuit];
+    public Card(Rank setRank, Suit setSuit) {
+        this.rank = setRank;
+        this.suit = setSuit;
     }
 
     /**
@@ -45,15 +45,15 @@ public class Card {
         return rank.val;
     }
 
-    private enum Rank {
+    public static enum Rank {
         Ace(1), King(10), Queen(10), Jack(10), Ten(10), Nine(9), Eight(8), Seven(7), Six(6), Five(
             5), Four(4), Three(3), Two(2);
-        public final int val;
+        public  final int val;
 
-        private Rank(int val) {
+        Rank(int val) {
             this.val = val;
         }
     }
 
-    private enum Suit {Diamonds, Hearts, Clubs, Spades}
+    public static enum Suit {Diamonds, Hearts, Clubs, Spades}
 }
