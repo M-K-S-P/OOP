@@ -80,6 +80,9 @@ public class Game {
         sc.close();
     }
 
+    /**
+     * Game status.
+     */
     public static enum Status {
         Won, Lost, Tie;
     }

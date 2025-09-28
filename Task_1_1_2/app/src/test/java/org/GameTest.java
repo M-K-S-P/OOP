@@ -13,8 +13,6 @@ public class GameTest {
 
     @Test
     void gameTestTie() {
-        String simulated = "1\n0\n";
-        Deck newDeck = new Deck();
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Card.Rank.Three, Card.Suit.Spades));
         cards.add(new Card(Card.Rank.Jack, Card.Suit.Hearts));
@@ -22,7 +20,9 @@ public class GameTest {
         cards.add(new Card(Card.Rank.Seven, Card.Suit.Clubs));
         cards.add(new Card(Card.Rank.Two, Card.Suit.Spades));
         cards.add(new Card(Card.Rank.Six, Card.Suit.Spades));
+        Deck newDeck = new Deck();
         newDeck.generateDeckFrom(cards);
+        String simulated = "1\n0\n";
         Scanner scanner = new Scanner(simulated);
         Game.Status stat = Game.round(scanner, newDeck);
         assertTrue(stat == Game.Status.Tie);
@@ -30,8 +30,6 @@ public class GameTest {
 
     @Test
     void gameTestWin() {
-        String simulated = "1\n0\n";
-        Deck newDeck = new Deck();
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Card.Rank.Three, Card.Suit.Spades));
         cards.add(new Card(Card.Rank.Jack, Card.Suit.Hearts));
@@ -39,7 +37,9 @@ public class GameTest {
         cards.add(new Card(Card.Rank.Seven, Card.Suit.Clubs));
         cards.add(new Card(Card.Rank.Two, Card.Suit.Spades));
         cards.add(new Card(Card.Rank.Seven, Card.Suit.Spades));
+        Deck newDeck = new Deck();
         newDeck.generateDeckFrom(cards);
+        String simulated = "1\n0\n";
         Scanner scanner = new Scanner(simulated);
         Game.Status stat = Game.round(scanner, newDeck);
         assertTrue(stat == Game.Status.Won);
@@ -47,8 +47,6 @@ public class GameTest {
 
     @Test
     void gameTestLost() {
-        String simulated = "0\n";
-        Deck newDeck = new Deck();
         List<Card> cards = new ArrayList<Card>();
         cards.add(new Card(Card.Rank.Three, Card.Suit.Spades));
         cards.add(new Card(Card.Rank.Jack, Card.Suit.Hearts));
@@ -56,7 +54,9 @@ public class GameTest {
         cards.add(new Card(Card.Rank.Seven, Card.Suit.Clubs));
         cards.add(new Card(Card.Rank.Two, Card.Suit.Spades));
         cards.add(new Card(Card.Rank.Four, Card.Suit.Spades));
+        Deck newDeck = new Deck();
         newDeck.generateDeckFrom(cards);
+        String simulated = "0\n";
         Scanner scanner = new Scanner(simulated);
         Game.Status stat = Game.round(scanner, newDeck);
         assertTrue(stat == Game.Status.Lost);
