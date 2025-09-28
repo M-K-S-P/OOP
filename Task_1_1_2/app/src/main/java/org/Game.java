@@ -13,7 +13,6 @@ public class Game {
     private static int roundCounter = 0;
 
     protected static Status round(Scanner sc, Deck newDeck) {
-        newDeck.generateDeck();
         Status stat = Status.Lost;
         System.out.println("round " + roundCounter);
         roundCounter += 1;
@@ -55,7 +54,7 @@ public class Game {
             stat = Status.Won;
         } else if (dealer.getSum() < user.getSum()) {
             stat = Status.Won;
-        } else {
+        } else if (dealer.getSum() == user.getSum()) {
             stat = Status.Tie;
         }
         return stat;
@@ -71,6 +70,8 @@ public class Game {
         Deck newDeck = new Deck();
         int flag = 1;
         while (flag == 1) {
+            newDeck.generateDeck();
+            newDeck.deckShuffle();
             Status stat = round(sc, newDeck);
             System.out.println(stat.toString());
             System.out.println("want to play again? Press 1");

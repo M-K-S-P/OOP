@@ -19,8 +19,7 @@ public class Deck {
     }
 
     /**
-     * Generates deck by what is provided in enums from Card class, in this case itGenerates deck by
-     * what is provided in enums from Card class, in this case it's bassic 52 card deck.
+     * Generates base 52 card deck
      */
     public void generateDeck() {
         newDeck = new ArrayList<>();
@@ -30,6 +29,12 @@ public class Deck {
                 newDeck.add(newCard);
             }
         }
+    }
+
+    /**
+     * Shuffles the deck.
+     */
+    public void deckShuffle() {
         Collections.shuffle(newDeck);
     }
 

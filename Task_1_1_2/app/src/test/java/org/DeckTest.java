@@ -13,6 +13,7 @@ public class DeckTest {
     void deckTest() {
         Deck deck = new Deck();
         deck.generateDeck();
+        deck.deckShuffle();
     }
 
     @Test
@@ -25,6 +26,8 @@ public class DeckTest {
             }
         }
         deck.generateDeckFrom(cards);
-        //предположим я проверил
+        for (int i = 0; i < cards.size(); i++) {
+            assertTrue(cards.get(i) == deck.fetchCard(i));
+        }
     }
 }
