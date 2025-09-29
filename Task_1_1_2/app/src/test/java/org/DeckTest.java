@@ -18,7 +18,7 @@ public class DeckTest {
         deck.deckShuffle();
         Set<String> cardString = new HashSet<String>();
         Card card;
-        for (int i = 0; i < 52; i++){
+        for (int i = 0; i < 52; i++) {
             card = deck.fetchCard(i);
             card.openCard();
             cardString.add(card.toString());
